@@ -1,0 +1,61 @@
+layout {
+    default_tab_template {
+        children
+        pane size=1 borderless=true {
+            plugin location="file:~/.config/zellij/plugins/zjstatus.wasm" {
+                // Sections
+                format_left   "{mode}"
+                format_center "{tabs}"
+                format_right  "{datetime}"
+                format_space  ""
+
+                // Borders
+                border_enabled  "false"
+                border_char     "─"
+                border_format   "#[fg=#6C7086]{char}"           // Overlay0
+                border_position "top"
+
+                hide_frame_for_single_pane "false"
+
+                // Modes (use subtle colored glyph + readable text)
+                mode_normal        "#[fg=#A6ADC8]"               // Subtext0
+                mode_locked        "#[fg=#F38BA8] "            // Red
+                mode_resize        "#[fg=#B4BEFE] 󰲏"            // Lavender
+                mode_pane          "#[fg=#B4BEFE] "            // Lavender
+                mode_tab           "#[fg=#B4BEFE] 󰓩"           // Lavender
+                mode_scroll        "#[fg=#89DCEB] "            // Sky
+                mode_enter_search  "#[fg=#94E2D5] "            // Teal
+                mode_search        "#[fg=#94E2D5]  󰌑"         // Teal
+                mode_rename_tab    "#[fg=#CBA6F7] 󰓩 󰑕"          // Mauve
+                mode_rename_pane   "#[fg=#CBA6F7]  󰑕"          // Mauve
+                mode_session       "#[fg=#89B4FA] 󰮫"            // Blue
+                mode_move          "#[fg=#FAB387] 󰆾"            // Peach
+                mode_prompt        "#[fg=#F9E2AF] 󰭹"            // Yellow
+                mode_tmux          "#[fg=#74C7EC] 󰰥"            // Sapphire
+
+                // Tabs
+                tab_separator " "
+                tab_normal                 "#[fg=#6C7086]{name}"                      // Overlay0
+                tab_active                 "#[fg=#CDD6F4,bold,italic]{name}{floating_indicator}" // Text
+                tab_active_fullscreen      "#[fg=#CDD6F4,bold,italic]{name}{fullscreen_indicator}"
+                tab_active_sync            "#[fg=#CDD6F4,bold,italic]{name}{sync_indicator}"
+
+                // Indicators (colored glyphs before/after names)
+                tab_sync_indicator         " 󰓦"     // Teal
+                tab_fullscreen_indicator   " 󰊓"     // Yellow
+                tab_floating_indicator     " 󰗣"     // Peach
+
+                // Git branch command (subtle blue)
+                command_git_branch_command     "git rev-parse --abbrev-ref HEAD"
+                command_git_branch_format      "#[fg=#89B4FA] {stdout} "   // Blue
+                command_git_branch_interval    "10"
+                command_git_branch_rendermode  "static"
+
+                // Datetime (subdued overlay tone)
+                datetime           "#[fg=#7F849C,bold] {format} " // Overlay1
+                datetime_format    "%H:%M"
+                datetime_timezone  "Europe/London"
+            }
+        }
+    }
+}

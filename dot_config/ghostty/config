@@ -1,0 +1,18 @@
+theme = Catppuccin Mocha
+background-opacity = 0.8
+background-blur-radius = 20
+mouse-hide-while-typing = true
+macos-icon = xray
+macos-option-as-alt = left
+
+quick-terminal-position = bottom
+
+# Unbind CMD+... keys so they will be forwarded to Zellij
+keybind = cmd+t=unbind
+keybind = cmd+n=unbind
+keybind = cmd+c=unbind
+keybind = cmd+w=unbind
+keybind = cmd+opt+left=unbind
+keybind = cmd+opt+right=unbind
+
+keybind = global:ctrl+grave_accent=toggle_quick_terminal
