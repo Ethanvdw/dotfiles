@@ -22,6 +22,7 @@ packages:
       - "ripgrep"
       - "starship"
       - "trash"
+      - "pre-commit"
       - "vcpkg"
       - "wget"
       - "yazi"
